@@ -91,13 +91,13 @@ function App() {
 
   const handlePrevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 3);
+      setCurrentIndex(prev => prev - 1);
     }
   };
 
   const handleNextSlide = () => {
-    if (currentIndex + 3 < filteredSkips.length) {
-      setCurrentIndex(prev => prev + 3);
+    if (currentIndex + 1 < filteredSkips.length) {
+      setCurrentIndex(prev => prev + 1);
     }
   };
 
