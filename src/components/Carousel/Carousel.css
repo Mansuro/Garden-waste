@@ -27,7 +27,7 @@
 }
 
 .skip-card {
-  flex: 0 0 calc((100% - 4rem) / 3);
+  flex: 0 0 300px;
   height: 450px;
   background-color: var(--card-bg);
   border-radius: 0.75rem;
@@ -338,24 +338,25 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .skip-card {
+    flex: 0 0 calc((100% - 2rem) / 2);
+  }
+}
+
 @media (max-width: 768px) {
   .carousel-container {
     margin: 0;
   }
 
   .skip-card {
-    flex: 0 0 100%;
+    flex: 0 0 200px;
     height: 400px;
   }
 
   .carousel-track {
     gap: 1rem;
   }
-
-  .carousel-nav {
-    display: none;
-  }
-
   .skip-card.selected::before {
     top: 0.5rem;
     right: 0.5rem;
@@ -436,3 +437,28 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 } 
+
+@media (max-width: 320px) {
+  .carousel-nav {
+    position: relative;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin: 1rem auto;
+    width: fit-content;
+    backdrop-filter: blur(4px);
+  }
+  
+  .carousel-button {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+  
+  .carousel-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}

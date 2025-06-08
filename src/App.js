@@ -4,6 +4,9 @@ import ProgressSteps from './components/ProgressSteps/ProgressSteps';
 import FilterSection from './components/FilterSection/FilterSection';
 import Carousel from './components/Carousel/Carousel';
 import Navigation from './components/Navigation/Navigation';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 function App() {
   const [selectedSkip, setSelectedSkip] = useState(null);
@@ -91,13 +94,13 @@ function App() {
 
   const handlePrevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 3);
+      setCurrentIndex(prev => prev - 1);
     }
   };
 
   const handleNextSlide = () => {
-    if (currentIndex + 3 < filteredSkips.length) {
-      setCurrentIndex(prev => prev + 3);
+    if (currentIndex + 1 < filteredSkips.length) {
+      setCurrentIndex(prev => prev + 1);
     }
   };
 
@@ -145,3 +148,4 @@ function App() {
 }
 
 export default App;
+

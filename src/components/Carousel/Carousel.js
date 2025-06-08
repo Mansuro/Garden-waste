@@ -16,8 +16,7 @@ const Carousel = ({
   error 
 }) => {
   const getCarouselTransform = () => {
-    const cardWidth = (100 - 4) / 3; // 100% - 4rem gap, divided by 3 cards
-    const translateX = -(currentIndex * (cardWidth + 2)); // cardWidth + gap
+    const translateX = -(currentIndex * 100);
     return `translateX(${translateX}%)`;
   };
 
@@ -62,24 +61,24 @@ const Carousel = ({
             />
           ))}
         </div>
-      </div>
 
-      {/* Carousel Navigation */}
-      <div className="carousel-nav">
-        <button
-          className="carousel-button"
-          onClick={onPrevSlide}
-          disabled={currentIndex === 0}
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button
-          className="carousel-button"
-          onClick={onNextSlide}
-          disabled={currentIndex + 3 >= skips.length}
-        >
-          <ChevronRight size={24} />
-        </button>
+        {/* Carousel Navigation */}
+        <div className="carousel-nav">
+          <button
+            className="carousel-button"
+            onClick={onPrevSlide}
+            disabled={currentIndex === 0}
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            className="carousel-button"
+            onClick={onNextSlide}
+            disabled={currentIndex + 1 >= skips.length}
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
     </div>
   );
